@@ -1,0 +1,14 @@
+.MuiMobileStepper-dot {
+  margin: 0.75rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  color: primary;
+}
+
+.MuiMobileStepper-dotActive {
+  background-color: primary; /* Active color */
+}
+
+.MuiButton-text {
+  color: primary;
+}

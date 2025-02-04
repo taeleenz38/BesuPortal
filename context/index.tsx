@@ -8,6 +8,7 @@ import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { State, WagmiProvider } from "wagmi";
+import { Montserrat } from "next/font/google";
 
 // Setup queryClient
 const queryClient = new QueryClient();
@@ -21,9 +22,9 @@ createWeb3Modal({
   enableAnalytics: true,
   enableOnramp: true,
   themeVariables: {
-    "--w3m-accent": "#212654",
-    "--w3m-color-mix": "#000000",
-    "--w3m-color-mix-strength": 40,
+    "--w3m-accent": "#8A69DF",
+    "--w3m-color-mix": "#FFFFFF",
+    "--w3m-color-mix-strength": 8,
   },
 });
 

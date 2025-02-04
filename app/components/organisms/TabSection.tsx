@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import ButtonLeftIcon from "../molecules/ButtonLeftIcon";
 import ButtonLeftIcon2 from "../molecules/ButtonLeftIcon2";

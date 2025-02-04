@@ -247,3 +247,8 @@ body {
     w-20 rounded-xl font-medium  hover:text-[#efefef]  bg-white text-[#808080];
   }
 }
+
+.custom-toast {
+  color: #8A69DF !important; /* Text color */
+  border: 2px solid #8A69DF !important; /* Border color */
+}

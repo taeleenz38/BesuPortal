@@ -14,7 +14,7 @@ const WalletDetailsTable = () => {
       <div className="grid grid-cols-3 pl-4 w-7/12 pb-14 mb-4 border-b-[1px]">
         <div className="col-span-1 font-medium">Wallet Address</div>
         <div className="col-span-2">
-          0x866BA0c6B77f1137F5650d73C0c4aD557F2fbC14 <ContentCopyIcon />
+          0x627306090abaB3A6e1400e9345bC60c78a8BEf57 <ContentCopyIcon />
         </div>
       </div>
       <div className="grid grid-cols-3 pl-4 w-7/12 pb-14 mb-4 border-b-[1px]">
@@ -22,7 +22,7 @@ const WalletDetailsTable = () => {
         <div className="col-span-2">Ethereum (ETH)</div>
       </div>
       <div className="grid grid-cols-3 pl-4 w-7/12 mb-4">
-        <div className="col-span-1 font-medium">Bank Linked On</div>
+        <div className="col-span-1 font-medium">Wallet Linked On</div>
         <div className="col-span-2">08/24/2023</div>
       </div>
     </div>

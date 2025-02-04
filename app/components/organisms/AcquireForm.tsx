@@ -46,6 +46,26 @@ const AcquireForm: React.FC<AcquireFormProps> = ({ toggleForm }) => {
 
   return (
     <div className="bg-white p-6 w-[1000px] text-lg fixed top-[20%] left-[50%] rounded-3xl z-30 ml-[-500px]">
+      {/* Close button */}
+      <button
+        className="absolute top-5 right-5 text-gray-500 hover:text-gray-700 focus:outline-none"
+        onClick={toggleForm}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
       <div className="mb-10">{getStepContent(activeStep)}</div>
       <div className="w-5/6 mx-auto text-primary">
         <MobileStepper

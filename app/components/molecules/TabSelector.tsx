@@ -30,7 +30,6 @@ const TabSelector = () => {
       setBalance(`$${result.formatted}`);
     });
   }, [tab, tokens]);
-  
 
   const TAB_DATA = [
     {
@@ -94,7 +93,7 @@ const TabSelector = () => {
             USD
           </TabButton>
         </div>
-        {/* <div className="hidden xl:inline-block">
+        <div className="hidden xl:inline-block">
           <TabButton
             selectTab={() => handleTabChange("GBP")}
             active={tab === "GBP"}
@@ -109,7 +108,7 @@ const TabSelector = () => {
           >
             GBP
           </TabButton>
-        </div> */}
+        </div>
       </div>
       <div className="mt-6 text-sm md:text-md text-black">{content}</div>
     </div>

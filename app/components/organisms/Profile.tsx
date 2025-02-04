@@ -22,17 +22,17 @@ const Profile = () => {
         </div>
       </div>
       <div className="bg-[#F9F9FC] flex p-8 rounded-xl shadow-md mt-20">
-        <div className="flex flex-col justify-center items-center w-4/12 border-r-2">
+        <div className="flex flex-col justify-center items-center w-3/12 border-r-2">
           <Image
             className="rounded-full"
             src="/images/profile.jpg"
             alt="Profile"
-            width={350}
-            height={350}
+            width={250}
+            height={250}
           />
           <h3 className="text-xl mt-4 font-medium text-primary">Ted Hansen</h3>
         </div>
-        <div className="flex flex-col w-3/12 border-r-2 px-6 justify-around">
+        <div className="flex flex-col w-4/12 border-r-2 px-6 justify-around">
           <div className="flex flex-col bg-white rounded-xl p-4 shadow-md">
             <h3 className="text-2xl mb-4 font-medium text-primary">
               Basic Information

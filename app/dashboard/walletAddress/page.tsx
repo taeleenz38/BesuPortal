@@ -20,15 +20,30 @@ const WalletAddress = () => {
       {formOpen && <OpacityFilter />}
       <Heading2 text="Wallet Address Book" />
       <div className="flex justify-between items-end mb-24">
-        <p>
-          To remove or update a wallet address, contact us via our{" "}
-          <Link href="#" className=" underline">
-            support page
-          </Link>
-          .
-        </p>
-        <div className="w-44" onClick={toggleForm}>
+        <div>
+          <p className="mb-2">
+            To remove or update a wallet address, contact us via our{" "}
+            <Link href="#" className=" underline">
+              support page
+            </Link>
+            .
+          </p>
+          <p>
+            Please be aware that only wallets provided by Alogo are valid for
+            transactions on the platform.
+          </p>
+        </div>
+        <div className="flex gap-6">
+          {/* <div className="w-44" onClick={toggleForm}>
           <ButtonLeftIcon text="Add Wallet" startIcon={<AddIcon />} />
+        </div> */}
+          <button
+            className="bg-[#8A69DF] hover:bg-[#9476E1] duration-100 font-medium rounded-3xl px-5 text-white text-md"
+            onClick={toggleForm}
+          >
+            Add Wallet
+          </button>
+          <w3m-button />
         </div>
       </div>
       <WalletBook />

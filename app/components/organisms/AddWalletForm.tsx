@@ -1,79 +1,82 @@
 "use client";
 import React, { useState } from "react";
-import Step1 from "./AddWallet/Step1";
-import Step2 from "./AddWallet/Step2";
-import Step3 from "./AddWallet/Step3";
+import OptionInput from "../atoms/OptionInput";
 import { MobileStepper, Button } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import "./AcquireWithFiat/Stepper.css";
+import TextInput from "../atoms/TextInput";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-interface AddBankFormProps {
+interface AddWalletFormProps {
   toggleForm: () => void; // Assuming toggleForm is a function with no arguments and returns void
 }
 
-const AcquireForm: React.FC<AddBankFormProps> = ({ toggleForm }) => {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
-  const totalSteps = 3;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+const AddWalletForm: React.FC<AddWalletFormProps> = ({ toggleForm }) => {
+  const handleSubmit = async () => {
+    toast.success(
+      "Request submitted successfully - please wait up to 24 hours to receive an email with your wallet details.",
+      {
+        className: "custom-toast",
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
   };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleDone = () => {
-    toggleForm(); // Call the toggleForm function to close the form
-  };
-
-  const getStepContent = (activeStep: number) => {
-    switch (activeStep) {
-      case 0:
-        return <Step1 />;
-      case 1:
-        return <Step2 />;
-      case 2:
-        return <Step3 />;
-      default:
-        return null;
-    }
-  };
-  
 
   return (
     <div className="bg-white p-6 w-[1000px] fixed top-[20%] left-[50%] rounded-3xl z-30 ml-[-500px]">
-      <div className="mb-10">{getStepContent(activeStep)}</div>
-      <div className="w-5/6 mx-auto text-primary">
-        <MobileStepper
-          steps={totalSteps}
-          position="static"
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="medium"
-              className="font-bold text-lg"
-              onClick={activeStep === totalSteps - 1 ? handleDone : handleNext}
-            >
-              {activeStep === totalSteps - 1 ? "Done" : "Next"}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="medium"
-              className="font-bold text-lg"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              Back
-            </Button>
-          }
-          variant="dots"
+      {/* Close button */}
+      <button
+        className="absolute top-5 right-5 text-gray-500 hover:text-gray-700 focus:outline-none"
+        onClick={toggleForm}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <div className="text-center w-2/3 mx-auto">
+        <h2 className="text-4xl font-bold mb-8">New Wallet Details</h2>
+        <p className="mb-6">Please fill in the details for your new wallet.</p>
+        <OptionInput
+          labelText="Network"
+          options={[
+            { value: "Besu", label: "Besu" },
+            { value: "Ethereum", label: "Ethereum" },
+          ]}
         />
+        <div className="mt-2">
+          <TextInput
+            labelId="filled-basic"
+            labelText="Wallet Nickname"
+            type="text"
+          />
+        </div>
+        <Button
+          size="medium"
+          className="font-semibold text-lg mt-4"
+          onClick={handleSubmit}
+        >
+          Submit Request
+        </Button>
       </div>
     </div>
   );
 };
 
-export default AcquireForm;
+export default AddWalletForm;

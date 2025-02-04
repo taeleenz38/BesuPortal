@@ -8,17 +8,10 @@ const WalletBook = () => {
   const tableData = [
     {
       nickname: "Stablecoin Wallet",
-      blockchain: "Ethereum",
-      address: "0x866BA0c6B77f1137F5650d73C0c4aD557F2fbC14",
+      blockchain: "Besu",
+      address: "0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
       status: "Active",
       addedDate: "08/24/2023",
-    },
-    {
-      nickname: "Stablecoin Wallet L2",
-      blockchain: "Polygon",
-      address: "0x866BA0c6B77f1137F5650d73C0c4aD557F2fbC14",
-      status: "Active",
-      addedDate: "09/27/2023",
     },
   ];
 
